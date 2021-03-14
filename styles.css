@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.c-nvidia-toast {
+    height: 250px;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 660px;
+}
+.c-nvidia-toast > * {
+    transition: transform 375ms cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+.c-nvidia-toast__content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #000;
+    transform: translateX(calc(100% + 12px));
+}
+
+.c-nvidia-toast__message {
+    color: #fff;
+    font-size: 30px;
+}
+
+.c-nvidia-toast__image {
+    margin-right: 30px;
+}
+
+.c-nvidia-toast_ornament {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    transform: translateX(100%);
+    background-color: #7fb31e;
+    transition-delay: 150ms;
+}
+
+.c-nvidia-toast.is-on-screen > * {
+    transform: initial;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.is-on-screen .c-nvidia-toast__content {
+    transform: none;
+    transition-delay: 300ms;
+}
+
+.is-on-screen .c-nvidia-toast_ornament {
+    transform: translateX(-12px);
+    transition-delay: 0;
+}
+
+#mostrar{
+    visibility: visible;
+}
